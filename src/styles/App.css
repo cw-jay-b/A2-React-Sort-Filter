@@ -1,0 +1,18 @@
+/* src/App.css */
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 200px; /* Gutter space */
+}
+
+
+
+.products-list {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 40px); /* Adjust height for scrolling */
+}
