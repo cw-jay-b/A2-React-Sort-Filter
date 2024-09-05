@@ -18,10 +18,15 @@ const App = () => {
         const [productsResponse, categoriesResponse] = await Promise.all([
           // https://stg.carwale.com/api/stocks?fuel=1+2
           // axios.get('https://dummyjson.com/products'),
-          axios.get('https://dummyjson.com/c/2ddb-0dd0-4899-aef2'),
-          // axios.get('https://stg.carwale.com/api/stocks?fuel=1+2'),
+          // axios.get('https://dummyjson.com/c/2ddb-0dd0-4899-aef2'),
+          // axios.get('https://stg.carwale.com/api/stocks?fuel=1+2+3+4+5+6&budget=0-'),
+          axios.get('/api/stocks'),
           axios.get('https://dummyjson.com/products/categories')
         ]);
+        console.log(productsResponse);
+        console.log(productsResponse.data);
+        console.log(productsResponse.data.stocks);
+        
         setProducts(productsResponse.data.stocks);
         setFilteredProducts(productsResponse.data.stocks);
         setCategories(categoriesResponse.data);
