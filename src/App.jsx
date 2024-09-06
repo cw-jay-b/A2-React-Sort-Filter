@@ -83,8 +83,8 @@ const App = () => {
        <>
        <h1>{totalCount} Used Cars In India</h1>
        
-       <div className="content-wrapper">
-        <section className="left">
+       <div className="content-wrapper" >
+        <section className="left" >
             <SortFilterSection
                 selectedFuel={selectedFuel}
                 setSelectedFuel={setSelectedFuel}

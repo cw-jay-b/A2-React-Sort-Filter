@@ -31,7 +31,7 @@ const SortFilterSection = ({
   };
 
   return (
-    <aside className="filter-section">
+    <aside style={{position: "sticky",top: "1rem"}} className="filter-section">
       <div style={{marginBottom: "1rem", display:"flex", justifyContent:"space-between"}} >
         <span>
           <img src={filter_img_path} alt="filter_icon" style={{marginRight: "0.5rem"}} />

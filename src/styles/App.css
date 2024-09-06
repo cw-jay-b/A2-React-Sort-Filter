@@ -1,8 +1,6 @@
 main {
   display: flex;
   flex-direction: column;
-  /* height: 100%; */
-  /* overflow: hidden; */
   align-items: flex-end;
 }
 
@@ -33,5 +31,5 @@ main {
 
 .results-count{
   margin-top: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
