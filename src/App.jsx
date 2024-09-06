@@ -93,11 +93,11 @@ const App = () => {
                 sortOrder={sortOrder}
                 setSortOrder={setSortOrder}
             />
-            <div className="results-count">{filteredProducts.length} results</div>  
+            <div className="results-count" >Showing {filteredProducts.length} {filteredProducts.length>1?"Cars":"Car"} </div>  
         </section>
         <section className='right' >
             <div className='sort-wrapper'>
-            <h3 style={{padding: "0.5rem 0"}}>Sort by Price</h3>
+            <h5 style={{padding: "0.5rem 0", fontWeight: "normal"}}>Sort by Price</h5>
             <select className='sort-input-box' value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
                 <option value="asc">Ascending</option>
                 <option value="desc">Descending</option>
@@ -113,7 +113,6 @@ const App = () => {
                     <NoDataCard/>
                 )
             }
-            {}
             </div>
         </section>
        </div>

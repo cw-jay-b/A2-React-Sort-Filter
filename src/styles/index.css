@@ -37,26 +37,8 @@ input[type="text"] {
   border-radius: 4px;
 }
 
-button {
-  padding: 8px 16px;
-  border: none;
-  background-color: #007bff;
-  color: #ffffff;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-button:hover {
-  background-color: #0056b3;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
+.no-data-card {
   background: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -65,7 +47,7 @@ button:hover {
   padding: 15px;
   width: 250px;
   text-align: left;
-}
+} 
 
 @media (prefers-color-scheme: dark) {
   .card {

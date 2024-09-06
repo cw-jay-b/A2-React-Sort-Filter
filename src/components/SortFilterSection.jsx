@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/FilterSection.css';
+import filter_img_path from "../assets/icons8-filter-16.png"
 
 const SortFilterSection = ({
   selectedFuel,
@@ -31,7 +32,13 @@ const SortFilterSection = ({
 
   return (
     <aside className="filter-section">
-      <h2 style={{marginBottom: "1rem"}} >Filter</h2>
+      <div style={{marginBottom: "1rem", display:"flex", justifyContent:"space-between"}} >
+        <span>
+          <img src={filter_img_path} alt="filter_icon" style={{marginRight: "0.5rem"}} />
+          <span style={{fontSize: "1.25rem", fontWeight: "bold"}} >Filters</span>
+        </span>
+        <button style={{color: "#0979b6", background: "none", outline: "none", border: "none", cursor: "pointer"}} >Clear All</button>
+        </div>
       <div className="filter-group">
         <h4>Fuel</h4>
         {['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric', 'Hybrid'].map((fuel, index) => (
@@ -49,7 +56,7 @@ const SortFilterSection = ({
         ))}
       </div>
 
-      <div className="filter-group" id="min-max-filter">
+      <div className="filter-group" id="min-max-filter" style={{marginBottom: "0"}}>
         <h4>Price Range</h4>
         <div style={{ display: "flex", alignItems: "center" }} >
           <span className="min-max-box" id="min-box">

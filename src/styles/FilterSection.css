@@ -10,6 +10,10 @@
 .filter-group label {
   display: block;
   margin-bottom: 5px;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 input[type="number"] {
@@ -29,15 +33,19 @@ input[type="number"] {
   padding: 0.5rem;
 }
 
-.sort-wrapper{
-  background-color: #fff;
+.sort-wrapper {
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   column-gap: 0.5rem;
   padding: 0.5rem 1rem;
 }
-
+.sort-wrapper select:hover{
+  cursor: pointer;
+}
 #min-box{
   margin-right: 1rem;
 }

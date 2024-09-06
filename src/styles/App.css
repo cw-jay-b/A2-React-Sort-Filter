@@ -1,12 +1,14 @@
 main {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   /* overflow: hidden; */
   align-items: flex-end;
 }
 
 .filter-section {
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
   background-color: #fff;
   padding: 20px;
   border-right: 1px solid #ddd;
@@ -27,4 +29,9 @@ main {
   border-bottom: 1px solid #ddd;
   justify-content: flex-end;
   column-gap: 0.5rem;
+}
+
+.results-count{
+  margin-top: 1rem;
+  font-size: 1.25rem;
 }
