@@ -1,8 +1,7 @@
 import React from 'react';
 import '../styles/FilterSection.css';
 
-const FilterSection = ({
-  categories,
+const SortFilterSection = ({
   selectedFuel,
   setSelectedFuel,
   priceRange,
@@ -13,60 +12,34 @@ const FilterSection = ({
   const handleFuelChange = (e) => {
     const value = parseInt(e.target.value, 10);
     setSelectedFuel(prev =>
-      prev.includes(value)
-        ? prev.filter(fuel => fuel !== value)
-        : [...prev, value]
+      prev.includes(value) ? prev.filter(fuel => fuel !== value) : [...prev, value]
     );
   };
 
   const handlePriceChange = (e) => {
-  
-    
     const { name, value } = e.target;
-    const newValue = Number(value);
-
-
-    setPriceRange(prevState => {
-      console.log("price chng",prevState);
-      
-      const newPriceRange = { ...prevState, [name]: newValue * 100000 };
-
-      if (newPriceRange.min > newPriceRange.max) {
+    const newValue = Number(value) * 100000;
+    setPriceRange(prev => {
+      const newRange = { ...prev, [name]: newValue };
+      if (newRange.min > newRange.max) {
         alert('Min price cannot be greater than Max price.');
-        return prevState; // Return previous state if invalid
+        return prev;
       }
-
-      if (newPriceRange.max < newPriceRange.min) {
-        alert('Max price cannot be less than Min price.');
-        return prevState; // Return previous state if invalid
-      }
-
-      console.log("price chng",name, value);
-      console.log("price chng",newPriceRange);
-
-      setPriceRange(newPriceRange);
-
-
-
-      return newPriceRange;
+      return newRange;
     });
-  }
-
-
-
-  const handleSortChange = (e) => {
-    setSortOrder(e.target.value);
   };
 
   return (
-    <div className="filter-section">
-      <h3>Filters</h3>
+    <aside className="filter-section">
+      <h2 style={{marginBottom: "1rem"}} >Filter</h2>
       <div className="filter-group">
         <h4>Fuel</h4>
         {['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric', 'Hybrid'].map((fuel, index) => (
-          <label key={fuel}>
+          <label key={index + 1}>
             <input
+              style={{margin: "0 0.5rem"}}
               type="checkbox"
+              // value={fuel}
               value={index + 1}
               checked={selectedFuel.includes(index + 1)}
               onChange={handleFuelChange}
@@ -83,12 +56,14 @@ const FilterSection = ({
             <input
             id="min-price-input"
             type="number"
+            min={0}
             name="min"
             placeholder="1"
             onBlur={handlePriceChange}
           />Lakhs</span> <span>-</span>
           <span className="min-max-box" id="max-box">
             <input
+            min={0}
             id="max-price-input"
             type="number"
             name="max"
@@ -97,16 +72,8 @@ const FilterSection = ({
           />Lakhs</span>
         </div>
       </div>
-
-      <div className="filter-group">
-        <h3>Sort by Rating</h3>
-        <select value={sortOrder} onChange={handleSortChange}>
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
-      </div>
-    </div>
+    </aside>
   );
 };
 
-export default FilterSection;
+export default SortFilterSection;

@@ -1,18 +1,30 @@
-/* src/App.css */
-
-.app-container {
+main {
   display: flex;
-  justify-content: space-between;
-  padding: 0 200px; /* Gutter space */
+  flex-direction: column;
+  height: 100%;
+  /* overflow: hidden; */
+  align-items: flex-end;
 }
 
+.filter-section {
+  background-color: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
 
-
-.products-list {
-  width: 75%;
+.content-wrapper{
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  overflow-y: auto;
-  height: calc(100vh - 40px); /* Adjust height for scrolling */
+  column-gap: 1rem;
+}
+
+.sort-section {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  padding: 10px;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+  justify-content: flex-end;
+  column-gap: 0.5rem;
 }

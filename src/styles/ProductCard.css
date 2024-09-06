@@ -1,12 +1,22 @@
 
+.products-wrapper {
+  margin-top: 1rem;
+  width: 37rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 20px);
-    padding: 15px;
-    box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 18rem;
+  padding: 15px;
+  box-sizing: border-box;
   }
   
   .product-image {
@@ -32,6 +42,8 @@
   }
   
   .product-button {
+    margin-top: 1rem;
+    width: 100%;
     background-color: red;
     color: #fff;
     border: none;
