@@ -73,7 +73,7 @@ const App = () => {
 
     return (
        <>
-       <h1 style={{marginBottom: "1rem"}} >{totalCount} Used Cars In India</h1>
+       <h1 style={{marginBottom: "1rem", fontSize: "24px"}} >{totalCount} Used Cars In India</h1>
        
        <div className="content-wrapper" >
         <section className="left" >
