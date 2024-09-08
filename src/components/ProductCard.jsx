@@ -11,7 +11,11 @@ const ProductCard = (product) => {
       {/* {product.profileId} */}
       <img src={product.stockImages[0] || NoCarImg } alt={product.carName} className="product-image" />
       <h2 className="product-title">{product.carName}</h2>
-      <p className="product-details">{product.fuel} | {product.cityName}</p>
+      <p className="product-details">
+        <span className='km'>{product.km} km </span> |
+        <span className='fuel'>{product.fuel} </span> |
+        <span className='cityname'>{product.cityName}</span>
+      </p>
       <p className="product-price">{product.price}</p>
       <button className="product-button">Get Seller Details</button>
     </div>
