@@ -5,9 +5,6 @@ import ProductCard from './components/ProductCard';
 import NoDataCard from './components/NoDataCard';
 import './styles/App.css';
 
-
-import { stocks } from "./dummy/data/cars.json";
-
 const App = () => {
     const [totalCount, setTotalCount] =useState(0);
     const fuelTypes = ['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric', 'Hybrid'];
@@ -16,27 +13,16 @@ const App = () => {
     const [selectedFuel, setSelectedFuel] = useState([]);
     const [priceRange, setPriceRange] = useState({ min: 0, max: Number.MAX_SAFE_INTEGER });
     const [sortOrder, setSortOrder] = useState('asc');
+
+    // for api call on first render
     useEffect(() => {
         const fetchData = async () => {
-            // *************************** DUMMY DATA TO BE REMOVED LATER ***************************
-
-            // setProducts(stocks)
-
-            // **************************************************************************************
-
-            // console.log(productsResponse.data.stocks);
-
-
-            // console.log(productsResponse);
-            // console.log(productsResponse.data);
-            // console.log(productsResponse.data.stocks);
+           
             try {
                 const [productsResponse, categoriesResponse] = await Promise.all([
-                    // https://stg.carwale.com/api/stocks?fuel=1+2
-                    // axios.get('https://dummyjson.com/products'),
                     // axios.get('https://dummyjson.com/c/2ddb-0dd0-4899-aef2'),
                     // axios.get('https://stg.carwale.com/api/stocks?fuel=1+2+3+4+5+6&budget=0-'),
-                    axios.get('/api/stocks'),
+                    axios.get(`/api/stocks??budget=0-${Number.MAX_SAFE_INTEGER}`),
                     axios.get('https://dummyjson.com/products/categories')
                 ]);
                 setTotalCount(productsResponse.data.totalCount);
@@ -71,36 +57,40 @@ const App = () => {
                 return (b.priceNumeric - a.priceNumeric); // Descending price
             }
         });
-    
+        
         setFilteredProducts(filtered);
     };
 
+    const handleClearAll = () => {
+        setSelectedFuel([]);
+        setPriceRange({ min: 0, max: Number.MAX_SAFE_INTEGER });
+    }
+
+    // for redender on state updt
     useEffect(() => {
         applyFilters();
     }, [selectedFuel, priceRange, sortOrder, products]);
 
     return (
        <>
-       <h1>{totalCount} Used Cars In India</h1>
+       <h1 style={{marginBottom: "1rem"}} >{totalCount} Used Cars In India</h1>
        
        <div className="content-wrapper" >
         <section className="left" >
             <SortFilterSection
                 selectedFuel={selectedFuel}
                 setSelectedFuel={setSelectedFuel}
-                priceRange={priceRange}
                 setPriceRange={setPriceRange}
-                sortOrder={sortOrder}
-                setSortOrder={setSortOrder}
-            />
-            <div className="results-count" >Showing {filteredProducts.length} {filteredProducts.length>1?"Cars":"Car"} </div>  
+                handleClearAll={handleClearAll}
+                resultCount = {filteredProducts.length}
+            />  
         </section>
         <section className='right' >
             <div className='sort-wrapper'>
-            <h5 style={{padding: "0.5rem 0", fontWeight: "normal"}}>Sort by Price</h5>
+            <h5 style={{padding: "0.5rem 0", fontWeight: "normal"}}>Sort By:</h5>
             <select className='sort-input-box' value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
+                <option value="asc">Price - Ascending</option>
+                <option value="desc">Price - Descending</option>
             </select>
             </div>
             <div className="products-wrapper">

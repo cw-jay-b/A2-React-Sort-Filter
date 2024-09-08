@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/ProductCard.css';
-import NoCarImg from "../assets/default-img.png"; 
+import NoCarImg from "../assets/default-car.svg"; 
 
 const ProductCard = (product) => {
   const fuelMap = ['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric', 'Hybrid'];

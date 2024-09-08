@@ -7,12 +7,12 @@
   scrollbar-width: none;
 }
 body {
-  color: #000000;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 2rem 10rem;
   /* overflow: auto; */
   height: 90%;
+  /* height: 90vh; */
 }
 
 @media (prefers-color-scheme: light) {

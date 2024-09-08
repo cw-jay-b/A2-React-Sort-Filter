@@ -40,7 +40,7 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  column-gap: 0.5rem;
+  column-gap: 0.25rem;
   padding: 0.5rem 1rem;
 }
 .sort-wrapper select:hover{
@@ -55,7 +55,7 @@ input[type="number"] {
 
 #min-price-input, #max-price-input {
   /* margin: 0.5rem 0.5rem; */
-  width: 2.5rem;
+  max-width: 3rem;
   background-color: transparent;
   outline: none;
   border: none;
