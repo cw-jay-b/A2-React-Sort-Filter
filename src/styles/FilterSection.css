@@ -1,0 +1,62 @@
+.filter-group {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+input[type="number"] {
+  width: 4rem;
+  margin: 0 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.min-max-box, .sort-input-box{
+  display: flex;
+  background-color: #fff;
+  border: 1px solid rgb(108, 108, 108);
+  align-items: center;
+  border-radius: 0.25rem ;
+  padding: 0.5rem;
+}
+
+.sort-wrapper {
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+.sort-wrapper select:hover{
+  cursor: pointer;
+}
+#min-box{
+  margin-right: 1rem;
+}
+#max-box{
+  margin-left: 1rem;
+}
+
+#min-price-input, #max-price-input {
+  /* margin: 0.5rem 0.5rem; */
+  max-width: 3rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
