@@ -19,12 +19,9 @@ const App = () => {
         const fetchData = async () => {
            
             try {
-                const [productsResponse, categoriesResponse] = await Promise.all([
-                    // axios.get('https://dummyjson.com/c/2ddb-0dd0-4899-aef2'),
-                    // axios.get('https://stg.carwale.com/api/stocks?fuel=1+2+3+4+5+6&budget=0-'),
-                    axios.get(`/api/stocks??budget=0-}`),
-                    axios.get('https://dummyjson.com/products/categories')
-                ]);
+                const productsResponse = await axios.get('/api/stocks?budget=0');
+                console.log(categoriesResponse);
+                
                 setTotalCount(productsResponse.data.totalCount);
                 setProducts(productsResponse.data.stocks);
                 setFilteredProducts(productsResponse.data.stocks);
