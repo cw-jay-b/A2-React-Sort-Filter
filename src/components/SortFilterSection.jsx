@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import '../styles/FilterSection.css';
 import filter_img_path from "../assets/icons8-filter-16.png"
 
@@ -7,7 +7,6 @@ const SortFilterSection = ({
   setPriceRange, handleClearAll, resultCount}) => {
 
   const inputRefs = {min: useRef(null), max: useRef(null)}
-
 
   const handleClearAllAndMinMaxInputs = () => {
     // check if ref .current key only asign value if ref present
@@ -26,16 +25,18 @@ const SortFilterSection = ({
     );
   }
   const handlePriceChange = (e) => {
+
     const { name, value } = e.target;
     const newValue = Number(value) * 100000;
 
     setPriceRange(prev => {
+      
       const newRange = { ...prev, [name]: newValue };
       if (newRange.min > newRange.max) {
         alert('Min price cannot be greater than Max price.');
         return prev;
       }
-      return newRange;
+      return newRange ;
     });
   }
 
