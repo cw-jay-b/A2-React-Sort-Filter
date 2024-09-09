@@ -19,9 +19,8 @@ const App = () => {
         const fetchData = async () => {
            
             try {
-                const productsResponse = await axios.get('/api/stocks?budget=0');
-                console.log(categoriesResponse);
-                
+                const productsResponse = await axios.get('/api/stocks?budget=0-');
+      
                 setTotalCount(productsResponse.data.totalCount);
                 setProducts(productsResponse.data.stocks);
                 setFilteredProducts(productsResponse.data.stocks);
@@ -70,7 +69,7 @@ const App = () => {
 
     return (
        <>
-       <h1 style={{marginBottom: "1rem", fontSize: "24px"}} >{totalCount} Used Cars In India</h1>
+       <h1 style={{marginBottom: "1rem"}} >{totalCount} Used Cars In India</h1>
        
        <div className="content-wrapper" >
         <section className="left" >
