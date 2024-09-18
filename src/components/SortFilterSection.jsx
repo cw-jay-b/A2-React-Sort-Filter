@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import '../styles/FilterSection.css';
 import filter_img_path from "../assets/icons8-filter-16.png"
+import { fuelTypes } from '../enums/fuelTypes';
+import { PRICE_MULTIPLIER } from "../enums/constants"
 
 const SortFilterSection = ({
   selectedFuel, setSelectedFuel, 
@@ -26,17 +28,22 @@ const SortFilterSection = ({
   }
   const handlePriceChange = (e) => {
 
-    const { name, value } = e.target;
-    const newValue = Number(value) * 100000;
-
+    const { name, value } = e.target; // destructure
+    console.log(name, value);
+    
+    const newPriceValue = Number(value) * PRICE_MULTIPLIER;
+    console.log(newPriceValue);
+    
     setPriceRange(prev => {
       
-      const newRange = { ...prev, [name]: newValue };
-      if (newRange.min > newRange.max) {
+      const newPriceRange = { ...prev, [name]: newPriceValue };
+      if (newPriceRange.min > newPriceRange.max) {
         alert('Min price cannot be greater than Max price.');
         return prev;
       }
-      return newRange ;
+      console.log(newPriceRange);
+      
+      return newPriceRange ;
     });
   }
 
@@ -54,7 +61,7 @@ const SortFilterSection = ({
     </div>
     <div className="filter-group">
       <h4>Fuel</h4>
-      {['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric', 'Hybrid'].map((fuel, index) => (
+      {fuelTypes.map((fuel, index) => (
         <label key={index + 1}>
           <input
             style={{ margin: "0 0.5rem" }}

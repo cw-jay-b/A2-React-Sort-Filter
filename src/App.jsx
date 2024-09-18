@@ -3,11 +3,11 @@ import axios from 'axios';
 import SortFilterSection from './components/SortFilterSection';
 import ProductCard from './components/ProductCard';
 import NoDataCard from './components/NoDataCard';
+import { fuelTypes } from "./enums/fuelTypes";
 import './styles/App.css';
 
 const App = () => {
     const [totalCount, setTotalCount] =useState(0);
-    const fuelTypes = ['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric', 'Hybrid'];
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [selectedFuel, setSelectedFuel] = useState([]);
@@ -21,9 +21,9 @@ const App = () => {
             try {
                 const productsResponse = await axios.get('/api/stocks?budget=0-');
       
-                setTotalCount(productsResponse.data.totalCount);
-                setProducts(productsResponse.data.stocks);
-                setFilteredProducts(productsResponse.data.stocks);
+                setTotalCount(productsResponse?.data?.totalCount);
+                setProducts(productsResponse?.data?.stocks);
+                setFilteredProducts(productsResponse?.data?.stocks);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -32,21 +32,21 @@ const App = () => {
     }, []);
 
     const applyFilters = () => {
-        let filtered = [...products];
+        let filtered_products = [...products];
 
         // Create a mapping of selected fuel numbers to fuel names
         const selectedFuelNames = selectedFuel.map(number => fuelTypes[number - 1]);
 
         if (selectedFuelNames.length > 0) {
-            filtered = filtered.filter(product => selectedFuelNames.includes(product.fuel));
+            filtered_products = filtered_products.filter(product => selectedFuelNames.includes(product.fuel));
         }
 
         // Filter by price range
-        filtered = filtered.filter(
+        filtered_products = filtered_products.filter(
             product => parseInt(product.priceNumeric) >= priceRange.min && parseInt(product.priceNumeric) <= priceRange.max
         );
 
-        filtered.sort((a, b) => {
+        filtered_products.sort((a, b) => {
             if (sortOrder === 'asc') {
                 return (a.priceNumeric - b.priceNumeric); // Ascending price
             } else {
@@ -54,7 +54,7 @@ const App = () => {
             }
         });
         
-        setFilteredProducts(filtered);
+        setFilteredProducts(filtered_products);
     };
 
     const handleClearAll = () => {
@@ -93,7 +93,7 @@ const App = () => {
             {
                 filteredProducts.length > 0 ? (
                     filteredProducts.map(product => (
-                        <ProductCard key={product.profileId} {...product} />
+                        <ProductCard key={product.profileId+Math.floor(Math.random()*1000)} {...product} />
                     ))
                 ) : (
                     <NoDataCard/>
