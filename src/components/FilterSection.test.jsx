@@ -2,12 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import SortFilterSection from './SortFilterSection';
+import FilterSection from './FilterSection';
 
 describe('Sort Filter Tests', ()=>{
 it('should match snapshot with default props', () => {
     const { asFragment } = render(
-        <SortFilterSection
+        <FilterSection
         selectedFuel={[]}
         setSelectedFuel={() => {}}
         setPriceRange={() => {}}
@@ -20,7 +20,7 @@ it('should match snapshot with default props', () => {
     
     it('should match snapshot with selected fuels and price range', () => {
     const { asFragment } = render(
-        <SortFilterSection
+        <FilterSection
         selectedFuel={[1, 3]} // Example of selected fuels
         setSelectedFuel={() => {}}
         setPriceRange={() => {}}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SortFilterSection from './components/SortFilterSection';
+import FilterSection from './components/FilterSection';
 import ProductCard from './components/ProductCard';
 import NoDataCard from './components/NoDataCard';
 import { fuelTypes } from "./enums/fuelTypes";
@@ -73,7 +73,7 @@ const App = () => {
        
        <div className="content-wrapper" >
         <section className="left" >
-            <SortFilterSection
+            <FilterSection
                 selectedFuel={selectedFuel}
                 setSelectedFuel={setSelectedFuel}
                 setPriceRange={setPriceRange}

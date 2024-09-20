@@ -4,7 +4,7 @@ import filter_img_path from "../assets/icons8-filter-16.png"
 import { fuelTypes } from '../enums/fuelTypes';
 import { PRICE_MULTIPLIER } from "../enums/constants"
 
-const SortFilterSection = ({
+const FilterSection = ({
   selectedFuel, setSelectedFuel, 
   setPriceRange, handleClearAll, resultCount}) => {
 
@@ -105,4 +105,4 @@ const SortFilterSection = ({
   );
 };
 
-export default SortFilterSection;
+export default FilterSection;
