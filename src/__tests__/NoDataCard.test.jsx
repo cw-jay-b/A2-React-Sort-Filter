@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, test, expect,  } from 'vitest';
 import '@testing-library/jest-dom';
 
-import NoDataCard from "./NoDataCard";
+import NoDataCard from "../components/NoDataCard";
 
 describe("Empty correct card", ()=>{
     render(<NoDataCard/>)

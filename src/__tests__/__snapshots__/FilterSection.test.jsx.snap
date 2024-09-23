@@ -1,0 +1,271 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sort Filter Tests > should match snapshot with default props 1`] = `
+<DocumentFragment>
+  <aside
+    class="filter-section"
+    style="position: sticky; top: 1rem;"
+  >
+    <div
+      style="margin-bottom: 1rem; display: flex; justify-content: space-between;"
+    >
+      <span>
+        <img
+          alt="filter_icon"
+          src="/src/assets/icons8-filter-16.png"
+          style="margin-right: 0.5rem;"
+        />
+        <span
+          style="font-size: 1.25rem; font-weight: bold;"
+        >
+          Filters
+        </span>
+      </span>
+      <button
+        style="color: rgb(9, 121, 182); background: none; outline: none; cursor: pointer;"
+      >
+        Clear All
+      </button>
+    </div>
+    <div
+      class="filter-group"
+    >
+      <h4>
+        Fuel
+      </h4>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="1"
+        />
+        Petrol
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="2"
+        />
+        Diesel
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="3"
+        />
+        CNG
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="4"
+        />
+        LPG
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="5"
+        />
+        Electric
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="6"
+        />
+        Hybrid
+      </label>
+    </div>
+    <div
+      class="filter-group"
+      id="min-max-filter"
+      style="margin-bottom: 0px;"
+    >
+      <h4>
+        Price Range
+      </h4>
+      <div
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="min-max-box"
+          id="min-box"
+        >
+          <input
+            id="min-price-input"
+            min="0"
+            name="min"
+            placeholder="1"
+            type="number"
+          />
+          Lakhs
+        </span>
+         
+        <span>
+          -
+        </span>
+        <span
+          class="min-max-box"
+          id="max-box"
+        >
+          <input
+            id="max-price-input"
+            min="0"
+            name="max"
+            placeholder="5"
+            type="number"
+          />
+          Lakhs
+        </span>
+      </div>
+    </div>
+    <div
+      class="results-count"
+    >
+      Showing 0 Car 
+    </div>
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`Sort Filter Tests > should match snapshot with selected fuels and price range 1`] = `
+<DocumentFragment>
+  <aside
+    class="filter-section"
+    style="position: sticky; top: 1rem;"
+  >
+    <div
+      style="margin-bottom: 1rem; display: flex; justify-content: space-between;"
+    >
+      <span>
+        <img
+          alt="filter_icon"
+          src="/src/assets/icons8-filter-16.png"
+          style="margin-right: 0.5rem;"
+        />
+        <span
+          style="font-size: 1.25rem; font-weight: bold;"
+        >
+          Filters
+        </span>
+      </span>
+      <button
+        style="color: rgb(9, 121, 182); background: none; outline: none; cursor: pointer;"
+      >
+        Clear All
+      </button>
+    </div>
+    <div
+      class="filter-group"
+    >
+      <h4>
+        Fuel
+      </h4>
+      <label>
+        <input
+          checked=""
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="1"
+        />
+        Petrol
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="2"
+        />
+        Diesel
+      </label>
+      <label>
+        <input
+          checked=""
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="3"
+        />
+        CNG
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="4"
+        />
+        LPG
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="5"
+        />
+        Electric
+      </label>
+      <label>
+        <input
+          style="margin: 0px 0.5rem;"
+          type="checkbox"
+          value="6"
+        />
+        Hybrid
+      </label>
+    </div>
+    <div
+      class="filter-group"
+      id="min-max-filter"
+      style="margin-bottom: 0px;"
+    >
+      <h4>
+        Price Range
+      </h4>
+      <div
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="min-max-box"
+          id="min-box"
+        >
+          <input
+            id="min-price-input"
+            min="0"
+            name="min"
+            placeholder="1"
+            type="number"
+          />
+          Lakhs
+        </span>
+         
+        <span>
+          -
+        </span>
+        <span
+          class="min-max-box"
+          id="max-box"
+        >
+          <input
+            id="max-price-input"
+            min="0"
+            name="max"
+            placeholder="5"
+            type="number"
+          />
+          Lakhs
+        </span>
+      </div>
+    </div>
+    <div
+      class="results-count"
+    >
+      Showing 10 Cars 
+    </div>
+  </aside>
+</DocumentFragment>
+`;

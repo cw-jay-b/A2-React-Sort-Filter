@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import FilterSection from './FilterSection';
+import FilterSection from '../components/FilterSection';
 
 describe('Sort Filter Tests', ()=>{
 it('should match snapshot with default props', () => {
